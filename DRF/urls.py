@@ -20,6 +20,7 @@ from api.views import studentAPI
 from api2.views import studentAPI2
 from api3.views import student_api3
 from api4.views import StudentAPI4
+from api5.views import LCStudentAPI5,RUDStudentAPI5
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +30,7 @@ urlpatterns = [
     path('studentapi3/<int:pk>',student_api3),
     path('studentapi4/',StudentAPI4.as_view()),
     path('studentapi4/<int:pk>',StudentAPI4.as_view()),
+    path('studentapi5/',LCStudentAPI5.as_view()),
+    path('studentapi5/<int:pk>',RUDStudentAPI5.as_view()),
     
 ]
