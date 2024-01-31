@@ -21,16 +21,26 @@ from api2.views import studentAPI2
 from api3.views import student_api3
 from api4.views import StudentAPI4
 from api5.views import LCStudentAPI5,RUDStudentAPI5
+from api6.views import LCStudentAPI6,RUDStudentAPI6
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #simple serialization and deserialization
     path('studentapi/', studentAPI.as_view()),
+    #Using Modelserializer
     path('studentapi2/', studentAPI2.as_view()),
+    #Function Based API View
     path('studentapi3/',student_api3),
     path('studentapi3/<int:pk>',student_api3),
+    #Class Based API View
     path('studentapi4/',StudentAPI4.as_view()),
     path('studentapi4/<int:pk>',StudentAPI4.as_view()),
+    #Genericview and Mixins
     path('studentapi5/',LCStudentAPI5.as_view()),
     path('studentapi5/<int:pk>',RUDStudentAPI5.as_view()),
+    #Concrete View Classes
+    path('studentapi6',LCStudentAPI6.as_view()),
+    path('studentapi6/<int:pk>',RUDStudentAPI6.as_view())
     
 ]
