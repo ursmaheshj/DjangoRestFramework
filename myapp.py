@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = 'http://127.0.0.1:8000/studentapi5/'
+url = 'http://127.0.0.1:8000/studentapi7/'
 
 headers = {"Content-Type":'application/json'}
 
@@ -46,4 +46,4 @@ def delete_data(id=None):
 # update_data()
 # delete_data(3)
 
-get_data()   
+get_data(2)   
