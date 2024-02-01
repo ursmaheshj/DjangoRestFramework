@@ -25,9 +25,12 @@ from api4.views import StudentAPI4
 from api5.views import LCStudentAPI5,RUDStudentAPI5
 from api6.views import LCStudentAPI6,RUDStudentAPI6
 from api7.views import StudentAPI7
+from api8.views import StudentAPI8
+
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('studentapi7',StudentAPI7,basename='studentapi7')
+router.register('studentapi8',StudentAPI8,basename='studentapi8')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -48,7 +51,7 @@ urlpatterns = [
     #Concrete View Classes
     path('studentapi6',LCStudentAPI6.as_view()),
     path('studentapi6/<int:pk>',RUDStudentAPI6.as_view()),
-    #Viewset
+    #Viewset #ModelViewSet
     path('',include(router.urls)),
     
 ]

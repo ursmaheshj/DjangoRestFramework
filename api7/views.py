@@ -8,6 +8,7 @@ from api.models import Student
 from .serializers import StudentSerializer
 
 # Create your views here.
+
 class StudentAPI7(ViewSet):
     def list(self,request):
         stu = Student.objects.all()

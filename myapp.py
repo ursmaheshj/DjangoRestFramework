@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = 'http://127.0.0.1:8000/studentapi7/'
+url = 'http://127.0.0.1:8000/studentapi8/'
 
 headers = {"Content-Type":'application/json'}
 
@@ -24,7 +24,7 @@ def post_data():
     r = requests.post(headers=headers, url=url, data=json.dumps(data))
     print(r.json())
 
-def update_data():
+def update_data(pk=1):
     data = {
         'id': 3,
         'name': 'Bhishma',
@@ -43,7 +43,7 @@ def delete_data(id=None):
 
 
 # post_data()
-# update_data()
+update_data()
 # delete_data(3)
 
 get_data(2)   
