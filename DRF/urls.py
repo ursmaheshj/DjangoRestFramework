@@ -51,7 +51,7 @@ urlpatterns = [
     #Concrete View Classes
     path('studentapi6',LCStudentAPI6.as_view()),
     path('studentapi6/<int:pk>',RUDStudentAPI6.as_view()),
-    #Viewset #ModelViewSet
+    #Viewset #ModelViewSet #BasicAuthentication
     path('',include(router.urls)),
     
 ]
