@@ -11,8 +11,8 @@ from api.models import Student
 class StudentAPI8(ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 # class StudentAPI8(ReadOnlyModelViewSet):
 #     queryset = Student.objects.all()
 #     serializer_class = StudentSerializer

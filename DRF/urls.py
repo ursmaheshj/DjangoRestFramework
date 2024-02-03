@@ -26,11 +26,13 @@ from api5.views import LCStudentAPI5,RUDStudentAPI5
 from api6.views import LCStudentAPI6,RUDStudentAPI6
 from api7.views import StudentAPI7
 from api8.views import StudentAPI8
+from api9.views import StudentAPI9
 
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('studentapi7',StudentAPI7,basename='studentapi7')
 router.register('studentapi8',StudentAPI8,basename='studentapi8')
+router.register('studentapi9',StudentAPI9,basename='studentapi9')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -53,5 +55,7 @@ urlpatterns = [
     path('studentapi6/<int:pk>',RUDStudentAPI6.as_view()),
     #Viewset #ModelViewSet #BasicAuthentication
     path('',include(router.urls)),
+    #To authenticate for browsable APIs
+    path('auth/',include('rest_framework.urls',namespace='rest_framework')),
     
 ]

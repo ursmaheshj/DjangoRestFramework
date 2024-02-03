@@ -1,3 +1,13 @@
-from django.shortcuts import render
+#SessionAuthentication
 
-# Create your views here.
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticatedOrReadOnly,DjangoModelPermissions,DjangoModelPermissionsOrAnonReadOnly
+from .serializers import StudentSerializer
+from api.models import Student
+
+class StudentAPI9(ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    authentication_classes = [SessionAuthentication]
+    permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
