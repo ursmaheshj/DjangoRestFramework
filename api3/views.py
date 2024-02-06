@@ -1,7 +1,9 @@
 # Function based API View
 
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,authentication_classes,permission_classes
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from .serializers import StudentSerializer
@@ -10,6 +12,8 @@ from api.models import Student
 # Create your views here.
 
 @api_view(['GET','POST','PUT','PATCH','DELETE'])
+@authentication_classes([BasicAuthentication])
+@permission_classes([IsAuthenticated])
 def student_api3(request,pk=None):
     try:
         if request.method == 'GET':
