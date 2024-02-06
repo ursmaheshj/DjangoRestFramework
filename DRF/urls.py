@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+#RestFramework
+from rest_framework.authtoken.views import obtain_auth_token
+
 #APIS
 from api.views import studentAPI
 from api2.views import studentAPI2
@@ -27,15 +30,19 @@ from api6.views import LCStudentAPI6,RUDStudentAPI6
 from api7.views import StudentAPI7
 from api8.views import StudentAPI8
 from api9.views import StudentAPI9
+from api10.views import StudentAPI10
 
+#Configuration for viewset
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('studentapi7',StudentAPI7,basename='studentapi7')
 router.register('studentapi8',StudentAPI8,basename='studentapi8')
 router.register('studentapi9',StudentAPI9,basename='studentapi9')
+router.register('studentapi10',StudentAPI10,basename='studentapi10')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('authtoken/',obtain_auth_token),
 
     #simple serialization and deserialization
     path('studentapi/', studentAPI.as_view()),
