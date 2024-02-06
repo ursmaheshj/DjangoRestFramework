@@ -31,6 +31,7 @@ from api7.views import StudentAPI7
 from api8.views import StudentAPI8
 from api9.views import StudentAPI9
 from api10.views import StudentAPI10
+from api10.authtoken import CustomAuthToken
 
 #Configuration for viewset
 from rest_framework.routers import DefaultRouter
@@ -64,5 +65,7 @@ urlpatterns = [
     path('',include(router.urls)),
     #To authenticate for browsable APIs
     path('auth/',include('rest_framework.urls',namespace='rest_framework')),
+    #For CustomAuthToken
+    path('getcustomtoken/',CustomAuthToken.as_view())
     
 ]

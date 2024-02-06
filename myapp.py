@@ -50,6 +50,18 @@ def delete_data(id=None):
 
 
 #Curl command for checking the Token genration
-curl_command = 'curl -X POST -d "username=mahesh&password=mahesh" http://127.0.0.1:8000/gettoken/'
-import os
-os.system(curl_command)
+# curl_command = 'curl -X POST -d "username=mahesh&password=mahesh" http://127.0.0.1:8000/getcustomtoken/'
+# import os
+# os.system(curl_command)
+
+#POST command for checking the Token genration  
+tokenurl = 'http://127.0.0.1:8000/getcustomtoken/'
+headers = {"Content-Type":'application/json'} 
+def gettoken():
+    data = {
+        'username': 'mahesh',
+        'password': 'mahesh'
+    }
+    r = requests.post(headers=headers, url=tokenurl, data=json.dumps(data))
+    print(r.json())
+gettoken()
