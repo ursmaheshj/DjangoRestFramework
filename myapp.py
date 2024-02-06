@@ -48,3 +48,8 @@ def delete_data(id=None):
 
 # get_data(2)   
 
+
+#Curl command for checking the Token genration
+curl_command = 'curl -X POST -d "username=mahesh&password=mahesh" http://127.0.0.1:8000/authtoken/'
+import os
+os.system(curl_command)
