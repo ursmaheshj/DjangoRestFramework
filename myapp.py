@@ -50,6 +50,6 @@ def delete_data(id=None):
 
 
 #Curl command for checking the Token genration
-curl_command = 'curl -X POST -d "username=mahesh&password=mahesh" http://127.0.0.1:8000/authtoken/'
+curl_command = 'curl -X POST -d "username=mahesh&password=mahesh" http://127.0.0.1:8000/gettoken/'
 import os
 os.system(curl_command)

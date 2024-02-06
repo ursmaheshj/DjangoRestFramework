@@ -42,7 +42,7 @@ router.register('studentapi10',StudentAPI10,basename='studentapi10')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('authtoken/',obtain_auth_token),
+    path('gettoken/',obtain_auth_token),
 
     #simple serialization and deserialization
     path('studentapi/', studentAPI.as_view()),
