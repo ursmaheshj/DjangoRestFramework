@@ -68,9 +68,9 @@ def gettoken():
     return r.json().get('token')
 token = gettoken()
 
-curl_command = f'curl --header "Authorization:token {token}" http://127.0.0.1:8000/studentapi10/'
-import os
-os.system(curl_command)
+# curl_command = f'curl --header "Authorization:token {token}" http://127.0.0.1:8000/studentapi10/'
+# import os
+# os.system(curl_command)
 
 #Get command to get the details with token authentication
 def getdata():
