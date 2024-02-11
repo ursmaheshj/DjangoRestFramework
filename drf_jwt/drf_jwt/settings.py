@@ -110,8 +110,9 @@ REST_FRAMEWORK = {
     # )
     #########Configuration for Throttling rate
     'DEFAULT_THROTTLE_RATES':{
-        'anon':'2/min',
-        'user':'5/min'
+        'anon':'3/min',
+        'user':'5/min',
+        'jack':'1/min'
     }
 }
 

@@ -5,6 +5,7 @@ from rest_framework.throttling import AnonRateThrottle,UserRateThrottle
 
 from .models import Student
 from .serializers import StudentSerializer
+from .throttling import JackRateThrottle
 
 # Create your views here.
 class StudentAPI(ModelViewSet):
@@ -13,5 +14,5 @@ class StudentAPI(ModelViewSet):
 
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
-    throttle_classes = [AnonRateThrottle,UserRateThrottle]
+    throttle_classes = [AnonRateThrottle,JackRateThrottle]
     
