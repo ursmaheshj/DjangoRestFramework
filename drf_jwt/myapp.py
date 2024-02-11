@@ -2,14 +2,38 @@ import requests
 import json
 
 headers = {"Content-Type":'application/json'}
+url = 'http://127.0.0.1:8000/studentapi/'
 
 def getdata(id=None,token=None):
-    url = 'http://127.0.0.1:8000/studentapi/'
     if not verifytoken(token):
         print("Token is expired")
     headers={'Authorization': f'Bearer {token}'}
     r = requests.get(headers=headers, url=url)
     print(r.json())
+
+def postdata(token):
+    if not verifytoken(token):
+        print("Token is expired")
+    headers={'Authorization': f'Bearer {token}','Content-Type':'application/json'}
+    data={
+        'name':'Shiv',
+        'roll':103,
+        'city':'Kailash'
+    }
+    r = requests.post(headers=headers, url=url, data=json.dumps(data))
+    print(r.json())
+
+def deletedata(token):
+    url = 'http://127.0.0.1:8000/studentapi/6'
+    if not verifytoken(token):
+        print("Token is expired")
+    headers={'Authorization': f'Bearer {token}','Content-Type':'application/json'}
+    r = requests.delete(headers=headers, url=url)
+    if r.text:
+        print(r.text)
+    else:
+        print("deleted the student")
+
 
 def gettoken():
     tokenurl = 'http://127.0.0.1:8000/gettoken/'
@@ -44,6 +68,8 @@ def verifytoken(token):
     
 access,refresh = gettoken()
 print(verifytoken(access))
+postdata(token=access)
+deletedata(token=access)
 getdata(token=access)
 
 
