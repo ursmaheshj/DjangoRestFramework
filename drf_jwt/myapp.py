@@ -5,9 +5,11 @@ headers = {"Content-Type":'application/json'}
 url = 'http://127.0.0.1:8000/studentapi/'
 
 def getdata(id=None,token=None):
+    headers = globals()['headers']
     if not verifytoken(token):
         print("Token is expired")
-    headers={'Authorization': f'Bearer {token}'}
+    if token is not None:
+        headers={'Authorization': f'Bearer {token}'}
     r = requests.get(headers=headers, url=url)
     print(r.json())
 
@@ -68,10 +70,23 @@ def verifytoken(token):
     
 access,refresh = gettoken()
 print(verifytoken(access))
-postdata(token=access)
-deletedata(token=access)
+# postdata(token=access)
+# deletedata(token=access)
 getdata(token=access)
-
+getdata(token=access)
+getdata(token=access)
+getdata(token=access)
+getdata(token=access)
+getdata(token=access)
+getdata(token=access)
+getdata(token=access)
+getdata(token=access)
+getdata()
+getdata()
+getdata()
+getdata()
+getdata()
+getdata()
 
 
 

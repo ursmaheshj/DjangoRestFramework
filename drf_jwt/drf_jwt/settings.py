@@ -103,11 +103,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # REST_FRAMEWORK_CONFIGURATIONS
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_RENDERER_CLASSES': (
-#         'rest_framework.renderers.JSONRenderer',
-#     )
-# }
+REST_FRAMEWORK = {
+    #########configuration for JSON Renderer
+    # 'DEFAULT_RENDERER_CLASSES': (
+    #     'rest_framework.renderers.JSONRenderer',
+    # )
+    #########Configuration for Throttling rate
+    'DEFAULT_THROTTLE_RATES':{
+        'anon':'2/min',
+        'user':'5/min'
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

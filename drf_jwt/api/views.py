@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.throttling import AnonRateThrottle,UserRateThrottle
 
 from .models import Student
 from .serializers import StudentSerializer
@@ -11,4 +12,6 @@ class StudentAPI(ModelViewSet):
     serializer_class = StudentSerializer
 
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    throttle_classes = [AnonRateThrottle,UserRateThrottle]
+    
