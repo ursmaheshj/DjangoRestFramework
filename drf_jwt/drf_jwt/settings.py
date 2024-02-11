@@ -112,7 +112,9 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES':{
         'anon':'3/min',
         'user':'5/min',
-        'jack':'1/min'
+        'jack':'1/min',
+        'studentlist':'2/min',
+        'studentupdate':'2/min'
     }
 }
 

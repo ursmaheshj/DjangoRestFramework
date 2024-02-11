@@ -19,7 +19,7 @@ from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView,TokenVerifyView
 
-from api.views import StudentAPI
+from api.views import StudentAPI,StudentListAPIView,StudentUpdateAPIView
 
 router = DefaultRouter()
 router.register('studentapi',StudentAPI,basename='studentapi')
@@ -29,6 +29,10 @@ urlpatterns = [
     path('',include(router.urls)),
     path('gettoken/',TokenObtainPairView.as_view()),
     path('refreshtoken/',TokenRefreshView.as_view()),
-    path('verifytoken/',TokenVerifyView.as_view())
+    path('verifytoken/',TokenVerifyView.as_view()),
+
+    #urls for ScopedThrottleview
+    path('studentlist/',StudentListAPIView.as_view()),
+    path('studentupdate/<int:pk>',StudentUpdateAPIView.as_view()),
     
 ]
