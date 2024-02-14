@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from api.views import StudentAPI
+from api2.views import StudentAPI2
+
 router = DefaultRouter()
 router.register('studentapi',StudentAPI,basename='studentapi')
+router.register('studentapi2',StudentAPI2)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
