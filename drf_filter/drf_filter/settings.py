@@ -123,7 +123,10 @@ STATIC_URL = 'static/'
 
 ########REST_FRAMEWORK CONFIGURATIONS#############
 REST_FRAMEWORK = {
+    ################Config for django-filter backend
     # 'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend']
+    ################Updating param for searchfilter
+    'SEARCH_PARAM':'q'
 }
 
 # Default primary key field type
