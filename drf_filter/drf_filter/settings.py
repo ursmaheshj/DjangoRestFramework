@@ -122,7 +122,7 @@ STATIC_URL = 'static/'
 
 ########REST_FRAMEWORK CONFIGURATIONS#############
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend']
+    # 'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 # Default primary key field type
