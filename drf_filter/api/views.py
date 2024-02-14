@@ -1,3 +1,5 @@
+### Applying filter backend from django-filter
+
 from rest_framework.generics import ListAPIView
 from rest_framework.viewsets import ModelViewSet
 from .serializers import StudentSerializer

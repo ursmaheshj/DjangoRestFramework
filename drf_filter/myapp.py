@@ -2,7 +2,7 @@ import requests
 import json
 
 headers = {"Content-Type":'application/json'}
-url = 'http://127.0.0.1:8000/studentapi/?name=Mahesh'
+url = 'http://127.0.0.1:8000/studentapi3/?ordering=name'
 
 def getdata(id=None,token=None):
     r = requests.get(headers=headers, url=url)
