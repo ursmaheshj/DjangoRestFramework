@@ -128,6 +128,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ##############REST FRAMEWORK Configuration
 REST_FRAMEWORK = {
     # 'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
-    # 'PAGE_SIZE':2,
-    # 'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',
-}
+#     'PAGE_SIZE':2,
+#     'ORDERING':'name',
+#     # 'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',
+#     'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.CursorPagination',
+} 
